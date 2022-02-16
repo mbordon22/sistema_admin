@@ -40,13 +40,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../sistema/lista-ventas.php" class="nav-link">
+              <a href="lista-ventas.php" class="nav-link">
                 <i class="fas fa-bars nav-icon"></i>
                 <p>Ver todos</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../sistema/crear-venta.php" class="nav-link">
+              <a href="crear-venta.php" class="nav-link">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Agregar</p>
               </a>
@@ -63,13 +63,13 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="../sistema/lista-productos.php" class="nav-link">
+              <a href="lista-productos.php" class="nav-link">
                 <i class="fas fa-bars nav-icon"></i>
                 <p>Ver todos</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="../sistema/crear-producto.php" class="nav-link">
+              <a href="formulario-producto.php" class="nav-link">
                 <i class="fas fa-plus nav-icon"></i>
                 <p>Agregar</p>
               </a>

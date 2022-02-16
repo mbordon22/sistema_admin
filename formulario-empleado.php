@@ -74,7 +74,7 @@ include("templates/header.php"); ?>
                                     <div class="form-group row">
                                         <label for="fechaNacimiento" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
                                         <div class="col-sm-10">
-                                            <input type="date" class="form-control" id="EmpleadoFecNac" name="EmpleadoFecNac">
+                                            <input type="date" class="form-control" id="EmpleadoFecNac" name="EmpleadoFecNac" value="<?= ($update == 1) ? $empleado['EmpleadoFecNac'] : ''; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -99,7 +99,7 @@ include("templates/header.php"); ?>
                                     <div class="form-group row">
                                         <label for="rol" class="col-sm-2 col-form-label">Rol:</label>
                                         <div class="col-sm-10">
-                                            <select name="EmpleadoRol" id="EmpleadoRol" class="form-control">
+                                            <select name="IdRol" id="IdRol" class="form-control">
                                                 <option value="0">--Seleccionar--</option>
                                                 <?php while($rol = $result_roles->fetch_assoc()): ?>
                                                     <option value="<?= $rol['IdRol'] ?>" <?= ( isset($empleado) && ($rol['IdRol'] == $empleado['IdRol'])) ? 'selected' :''; ?> >
@@ -121,6 +121,7 @@ include("templates/header.php"); ?>
                                 <div class="card-footer d-flex justify-content-end">
                                     <input type="hidden" name="action" value="<?= ($update == 0) ? 'insert' : 'update' ;?>">
                                     <input type="hidden" name="IdEmpleado" value="<?= ($update == 0) ? 0 : $empleado['IdEmpleado'] ;?>">
+                                    <a href="empleados.php" class="btn btn-primary mr-2">Volver</a>
                                     <button type="submit" class="btn btn-info" id="btn-form-admin"><?= ($update == 0) ? 'Crear' : 'Actualizar' ;?></button>
                                 </div>
                                 <!-- /.card-footer -->

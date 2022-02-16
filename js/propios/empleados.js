@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function guardarEmpleado(e) {
     e.preventDefault();
+    //console.log('Hola');return;
 
     const data = new FormData(formEmpleado);
     const accion = data.get('action');
@@ -18,7 +19,7 @@ function guardarEmpleado(e) {
 
     const xhr = new XMLHttpRequest();
 
-    xhr.open('POST', urlAction);
+    xhr.open('POST', 'controladores/modelo-empleados.php');
 
     xhr.onload = function () {
         if (xhr.status == 200) {
@@ -43,7 +44,7 @@ function guardarEmpleado(e) {
 }
 
 
-function eliminarUsuario(IdEmpleado, EmpleadoNombre) {
+function eliminarEmpleado(IdEmpleado, EmpleadoNombre) {
     const data = new FormData();
     data.append('IdEmpleado', IdEmpleado);
     data.append('action', 'delete');

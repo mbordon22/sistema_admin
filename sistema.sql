@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-02-2022 a las 18:07:55
+-- Tiempo de generación: 16-02-2022 a las 14:18:53
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.7
 
@@ -60,11 +60,21 @@ CREATE TABLE `empleados` (
   `EmpleadoTel` varchar(20) DEFAULT NULL,
   `EmpleadoMail` varchar(100) DEFAULT NULL,
   `EmpleadoDomicilio` varchar(300) DEFAULT NULL,
+  `EmpleadoEstado` char(3) NOT NULL DEFAULT 'HAB',
   `EmpleadoInsertUsu` int(11) NOT NULL,
   `EmpleadoInsertFec` datetime NOT NULL,
   `EmpleadoUpdateUsu` int(11) DEFAULT NULL,
   `EmpleadoUpdateFec` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`IdEmpleado`, `IdRol`, `EmpleadoNombre`, `EmpleadoApellido`, `EmpleadoDNI`, `EmpleadoFecNac`, `EmpleadoTel`, `EmpleadoMail`, `EmpleadoDomicilio`, `EmpleadoEstado`, `EmpleadoInsertUsu`, `EmpleadoInsertFec`, `EmpleadoUpdateUsu`, `EmpleadoUpdateFec`) VALUES
+(2, 6, 'Juan Pedro', 'Rodriguez', '26548451', '2000-04-25', '3815465894', 'juanp@gmail.com', 'Padre Rorque Correa 3000', 'HAB', 1, '2022-02-15 14:28:53', 1, '2022-02-16 00:51:26'),
+(3, 2, 'Carlos', 'Gonzales', '32584689', '1997-04-08', '381846598', 'carlosg@gmail.com', 'Viamonte 2000', 'HAB', 1, '2022-02-15 14:29:44', 1, '2022-02-16 00:56:41'),
+(5, 1, 'Maximiliano', 'Rivadeneira Bordón', '41384334', '1998-06-30', '3816173059', 'rivadenneira@gmail.com', 'Padre Roque Correa 2227', 'HAB', 1, '2022-02-16 00:27:42', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -105,7 +115,9 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`IdRol`, `Rol`, `RolInsertUsu`, `RolInsertFec`, `RolUpdateUsu`, `RolUpdateFec`) VALUES
 (1, 'Administrador', 1, '2022-02-12 00:00:00', NULL, NULL),
-(2, 'Usuario', 1, '2022-02-12 00:00:00', NULL, NULL);
+(2, 'Usuario', 1, '2022-02-12 00:00:00', NULL, NULL),
+(5, 'Cajero/a', 1, '2022-02-16 00:00:00', NULL, NULL),
+(6, 'Repositor', 1, '2022-02-16 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -144,6 +156,12 @@ ALTER TABLE `categorias`
   ADD PRIMARY KEY (`IdCategoria`);
 
 --
+-- Indices de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`IdEmpleado`);
+
+--
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -172,6 +190,12 @@ ALTER TABLE `categorias`
   MODIFY `IdCategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  MODIFY `IdEmpleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -181,7 +205,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `IdRol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdRol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
